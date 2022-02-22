@@ -8,7 +8,7 @@ function extraiLink(text){
   while((temp = regex.exec(text)) != null){
     arrayResultados.push({[temp[1]]: temp[2]});
   }
-  return arrayResultados;
+  return arrayResultados.length === 0 ? 'Não há links' : arrayResultados;
 }
 
 function trataErro(erro){
@@ -19,7 +19,7 @@ export default async function pegarArquivo(caminhoDoArquivo){
   const encoding = 'utf-8';
   try{
     const text = await fs.promises.readFile(caminhoDoArquivo, encoding);
-    console.log(extraiLink(text));
+    return extraiLink(text);
   }catch(erro){
    trataErro(erro); 
   }
