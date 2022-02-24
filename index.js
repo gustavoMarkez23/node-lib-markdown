@@ -10,7 +10,7 @@ function extraiLink(text){
   }
   return arrayResultados.length === 0 ? 'Não há links' : arrayResultados;
 }
-
+https://cursos.alura.com.br/forum/topico-teste-nao-funciona-resolvido-192606
 function trataErro(erro){
   throw new Error(chalk.red(erro.code, 'Não há arquivo no diretório'));
 }
