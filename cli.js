@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import chalk from 'chalk';
 import pegarArquivo from './index.js';
 import validaURL from './http-validacao.js';

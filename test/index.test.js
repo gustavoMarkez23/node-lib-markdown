@@ -2,21 +2,21 @@ import pegarArquivo from '../index.js';
 
 const arrayResult = [
   {
-    Markdown: 'https://pt.wikipedia.org/wiki/Markdown'
+    FileList: 'https://developer.mozilla.org/pt-BR/docs/Web/API/FileList'
   }
 ]
 
 describe('pegarArquivo::', () => {
-  it('must be a function', () => {
+  it('deve ser uma função', () => {
     expect(typeof pegarArquivo).toBe('function');
+  });
+  it('deve retornar array de resultados', async () => {
+    const resultado = await pegarArquivo('D:\Documents\GitHub\node-lib-markdown\test\files\texto1.md');
+    expect(resultado).toEqual(arrayResult);
   })
-    // it('return a array with results', async () => {
-    //     const result = await getFile('/Users/CaroAlvim/Desktop/Laboratoria/SAP006-md-links/files/text-for-test.md')
-    //     expect(result).toEqual(arrayResult);
-    // })
-    // it('must return a msg "No links"', async () => {
-    //     const result = await getFile('/Users/CaroAlvim/Desktop/Laboratoria/SAP006-md-links/files/text_no_links.md')
-    //     expect(result).toBe('Sem links');
-    // })
-})
+  it('Deve retornar a mensagem "não há links"', async () => {
+      const result = await getFile('D:\Documents\GitHub\node-lib-markdown\test\files\texto1_without_link.md')
+      expect(result).toBe('Sem links');
+  })
+});
 
