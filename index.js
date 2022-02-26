@@ -23,22 +23,3 @@ export default async function pegarArquivo(caminhoDoArquivo){
    trataErro(erro); 
   }
 }
-
-// pegarArquivo('./arquivo/texto1.md');
-
-// function pegarArquivo(caminhoDoArquivo){
-//   const encoding = 'utf-8';
-//   fs.promises.readFile(caminhoDoArquivo, encoding)
-//   .then((text) => console.log(chalk.green(text)))
-//   .catch((erro) => trataErro(erro));
-// }
-
-// function pegarArquivo(caminhoDoArquivo){
-//   const encoding = 'utf-8';
-//   fs.readFile(caminhoDoArquivo, encoding, (erro, text) => {
-//     if(erro){
-//       trataErro(erro);
-//     }
-//     console.log(chalk.green(text));
-//   })
-// }
