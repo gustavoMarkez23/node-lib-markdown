@@ -1,5 +1,4 @@
-import chalk from 'chalk';
-import fs from 'fs';
+const fs = require('fs');
 
 function extraiLink(text){
   const regex = /\[([^\]]*)\]\((http?s:\/\/[^$#\s].[^\s]*)\)/gm;
@@ -11,15 +10,18 @@ function extraiLink(text){
   return arrayResultados.length === 0 ? 'Não há links' : arrayResultados;
 }
 function trataErro(erro){
-  throw new Error(chalk.red(erro.code, 'Não há arquivo no diretório'));
+  throw new Error(erro.code, 'Não há arquivo no diretório');
 }
 
-export default async function pegarArquivo(caminhoDoArquivo){
+async function pegarArquivo(caminhoDoArquivo){
   const encoding = 'utf-8';
   try{
     const text = await fs.promises.readFile(caminhoDoArquivo, encoding);
+    console.log(text);
     return extraiLink(text);
   }catch(erro){
    trataErro(erro); 
   }
 }
+
+module.exports = pegarArquivo;

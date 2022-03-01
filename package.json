@@ -7,7 +7,6 @@
     "test": "jest",
     "cli": "node cli.js ./arquivo/texto1.md validar"
   },
-  "type": "module",
   "author": "Gustavo Marques da Silva",
   "license": "ISC",
   "dependencies": {
@@ -15,10 +14,6 @@
     "node-fetch": "^3.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.5",
-    "@babel/node": "^7.16.8",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-typescript": "^7.16.7",
     "jest": "^27.5.1"
   }
 }
