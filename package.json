@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Biblioteca para validar links de arquivos markdown",
   "main": "./cli.js",
+  "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "cli": "node cli.js ./arquivo/texto1.md validar"
+  },
+  "jest": {
+    "transform": {
+    }
   },
   "author": "Gustavo Marques da Silva",
   "license": "ISC",

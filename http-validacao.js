@@ -1,4 +1,4 @@
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+import fetch from 'node-fetch';
 
 function manejaErros(erro) {
   throw new Error(erro.message);
@@ -16,7 +16,6 @@ async function checkStatus(arrayUrls) {
   } catch (erro) {
     manejaErros(erro)
   }
-
 }
 
 function geraArrayDeUrls(arrayLinks) {
@@ -25,14 +24,11 @@ function geraArrayDeUrls(arrayLinks) {
       .values(o).join());
 }
 
-async function validaURL(arrayLinks) {
+export default async function validaURL(arrayLinks) {
   const links = geraArrayDeUrls(arrayLinks);
   const statusLinks = await checkStatus(links);
-
   const resultados = arrayLinks.map((o, i) => (
     { ...o, status: statusLinks[i] }
   ));
   return resultados;
 }
-
-module.exports = validaURL;
