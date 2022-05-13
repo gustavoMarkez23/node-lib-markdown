@@ -1,24 +1,39 @@
 {
-  "name": "lib-markdown",
+  "name": "lib-markdown-gms",
   "version": "1.0.0",
   "description": "Biblioteca para validar links de arquivos markdown",
   "main": "./cli.js",
   "type": "module",
+  "preferGlobal": true,
+  "keywords": [
+    "Javascript",
+    "NodeJs",
+    "Markdown",
+    "URL"
+  ],
+  "homepage": "https://github.com/gustavoMarkez23/node-lib-markdown#readme",
+  "bugs": {
+    "url": "https://github.com/gustavoMarkez23/node-lib-markdown/issues",
+    "email": "gustavo.markez23@gmail.com"
+  },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "cli": "node cli.js ./arquivo/texto1.md validar"
   },
   "jest": {
-    "transform": {
-    }
+    "transform": {}
   },
-  "author": "Gustavo Marques da Silva",
-  "license": "ISC",
+  "author": "Gustavo Marques da Silva <gustavo.markez23@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^5.0.0",
-    "node-fetch": "^3.2.0"
+    "node-fetch": "^3.2.0",
+    "user": "^0.0.0"
   },
   "devDependencies": {
     "jest": "^27.5.1"
+  },
+  "bin": {
+    "lib-markdown-gms": "./cli.js"
   }
 }

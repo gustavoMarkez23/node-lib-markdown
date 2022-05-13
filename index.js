@@ -1,8 +1,6 @@
 import * as fs from 'fs';
-// import chalk from 'chalk';
 
 function trataErro(erro) {
-  // throw new Error(chalk.red(erro.code, 'Não há arquivo no caminho!'));
   throw new Error(erro.code, 'Não há arquivo no caminho!');
 }
 
