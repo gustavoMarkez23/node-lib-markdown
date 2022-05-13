@@ -1,6 +1,6 @@
 {
   "name": "lib-markdown-gms",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Biblioteca para validar links de arquivos markdown",
   "main": "./cli.js",
   "type": "module",
